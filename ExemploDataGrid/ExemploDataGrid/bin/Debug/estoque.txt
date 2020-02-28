@@ -1,0 +1,4 @@
+Mouse|10|1|armario informatica prateleira 1
+Teclado|6|1|armario informatica prateleira 1
+Monitor|0|1|armario informatica prateleira 3
+Cabo de fonte|100|1|armario princiapl prateleira 2
