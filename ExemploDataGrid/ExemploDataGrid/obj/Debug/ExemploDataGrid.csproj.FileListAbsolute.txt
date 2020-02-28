@@ -16,3 +16,12 @@ C:\Users\Administrador\Downloads\ExemploDataGrid\ExemploDataGrid\obj\Debug\Exemp
 C:\Users\Administrador\Downloads\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
 C:\Users\Administrador\Downloads\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
 C:\Users\Administrador\Downloads\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe.config
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.pdb
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Form1.resources
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
+C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb

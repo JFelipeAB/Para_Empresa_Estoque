@@ -45,6 +45,7 @@ namespace ExemploDataGrid
                     contador++;
                 }
             }
+            AtualizaGrid();
         }
 
         public void AtualizaGrid() 
@@ -53,13 +54,17 @@ namespace ExemploDataGrid
 
             gridLista = dgvLista;// Atribui o elemento da tela
             gridLista.Columns.Add("Item", "Item");
-            gridLista.Columns.Add("Quantidade", "Quantidade");
+            gridLista.Columns.Add("Disponivel", "Disponivel");
+            gridLista.Columns.Add("Manutenção/Descarregado", "Manutenção/Descarregado");
+            gridLista.Columns.Add("Local", "Local");
 
             foreach (Item a in lista)
             {
                 gridLista.Rows.Add();
                 gridLista.Rows[pos].Cells[0].Value = a.Nome;
                 gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
+                gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
+                gridLista.Rows[pos].Cells[3].Value = a.Local;
 
                 pos++;
             }
@@ -85,6 +90,8 @@ namespace ExemploDataGrid
                     gridLista.Rows.Clear();
                     gridLista.Rows[0].Cells[0].Value = a.Nome;
                     gridLista.Rows[0].Cells[1].Value = a.Disponivel;
+                    gridLista.Rows[0].Cells[2].Value = a.Manutencao;
+                    gridLista.Rows[0].Cells[3].Value = a.Local;
                     break;
                 }
                 else

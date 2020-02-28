@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
@@ -39,10 +40,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLista
@@ -50,7 +54,7 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(12, 70);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(311, 457);
+            this.dgvLista.Size = new System.Drawing.Size(331, 457);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellContentClick);
             // 
@@ -94,6 +98,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.btnAlterar);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Location = new System.Drawing.Point(369, 233);
@@ -146,6 +151,18 @@
             this.textBox2.Size = new System.Drawing.Size(116, 20);
             this.textBox2.TabIndex = 2;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(154, 33);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(15, 20);
+            this.numericUpDown1.TabIndex = 4;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +183,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +202,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
