@@ -25,3 +25,13 @@ C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploD
 C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
 C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
 C:\Users\Administrador\Desktop\Dev\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe.config
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.pdb
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojResolveAssemblyReference.cache
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Form1.resources
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Properties.Resources.resources
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.CoreCompileInputs.cache
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
+C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb

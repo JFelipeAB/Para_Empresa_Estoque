@@ -29,18 +29,17 @@ namespace ExemploDataGrid
             {
                 string linha = string.Empty;
                 int contador = 0;
-
+                
                 while ((linha = sr.ReadLine()) != null)
                 {
+                    string[] split = new string[4];
                     Item a = new Item();
-                    a.Nome = linha.Substring(0, linha.IndexOf('|'));
-                    linha.Remove(0, linha.IndexOf('|'));
-                    a.Disponivel = linha.Substring(0, linha.IndexOf('|') + 1);
-                    linha.Remove(0, linha.IndexOf('|'));
-                    a.Manutencao = linha.Substring(0, linha.IndexOf('|'));
-                    linha.Remove(0, linha.IndexOf('|'));
-                    a.Local = linha.Substring(0, linha.IndexOf('|') + 1);
-                    linha.Remove(0, linha.IndexOf('|'));
+                    split = linha.Split('|');
+                    a.Nome = split[0];
+                    a.Disponivel = split[1];
+                    a.Manutencao = split[2];
+                    a.Local = split[3];
+
                     lista.Add(a);
                     contador++;
                 }
@@ -50,6 +49,7 @@ namespace ExemploDataGrid
 
         public void AtualizaGrid() 
         {
+            
             int pos = 0;
 
             gridLista = dgvLista;// Atribui o elemento da tela
@@ -57,6 +57,8 @@ namespace ExemploDataGrid
             gridLista.Columns.Add("Disponivel", "Disponivel");
             gridLista.Columns.Add("Manutenção/Descarregado", "Manutenção/Descarregado");
             gridLista.Columns.Add("Local", "Local");
+
+            gridLista.Columns[3].Width = 200;
 
             foreach (Item a in lista)
             {
@@ -101,5 +103,6 @@ namespace ExemploDataGrid
            
             
         }
+               
     }
 }
