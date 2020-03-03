@@ -1,4 +1,5 @@
-Mouse|10|1|armario informatica prateleira 1
-Teclado|6|1|armario informatica prateleira 1
-Monitor|0|1|armario informatica prateleira 3
-Cabo de fonte|100|1|armario princiapl prateleira 2
+Mouse|10|2|Armario prateleira 1
+Cabo Fonte|10|3|Armario prateleira 2
+Monitor|0|2|Armario prateleira 4
+Cd|10|0|Bancada
+Tinta Magenta 1L|1|0|Armario Primeira Prateleira

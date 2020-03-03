@@ -23,13 +23,84 @@ namespace ExemploDataGrid
             LerTexto();
         }
 
+        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            gridLista.Rows.Clear();
+            int pos = 0;
+            bool ExisteItem = false;
+            foreach (Item a in lista)
+            {
+                if (a.Nome.ToUpper().IndexOf(txtBusca.Text.ToString().Trim().ToUpper()) != -1)
+                {
+                    gridLista.Rows.Add();
+                    gridLista.Rows[pos].Cells[0].Value = a.Nome;
+                    gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
+                    gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
+                    gridLista.Rows[pos].Cells[3].Value = a.Local;
+                    pos++;
+                    ExisteItem = true;
+                }
+            }
+            if (!ExisteItem)
+            {
+                MessageBox.Show("Nenhum item Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                AtualizaGrid();
+            }
+        }
+       
+
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            AtualizaGrid();
+        }
+
+        private void BtnAlterar_Click(object sender, EventArgs e)
+        {
+            Item insere = new Item();
+            insere.Nome = txtNomeA.Text.Trim();
+            insere.Disponivel = Nud1.Text.Trim();
+            insere.Manutencao = Nud2.Text.Trim();
+            insere.Local = txtLocalA.Text.Trim();
+            lista.Add(insere);
+            SalvaLista();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Certeza que deseja exclui o Item?", "`Confirmação", MessageBoxButtons.YesNo);
+            Item excluir = new Item();
+            excluir.Nome = txtNomeA.Text.Trim();
+            excluir.Disponivel = Nud1.Text.Trim();
+            excluir.Manutencao = Nud2.Text.Trim();
+            excluir.Local = txtLocalA.Text.Trim();
+            ExcluiItem(excluir);
+        }
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Item cadastra = new Item();
+            cadastra.Nome = txtNomeC.Text.Trim();   
+            cadastra.Disponivel = Nud3.Text.Trim();
+            cadastra.Manutencao = Nud4.Text.Trim();
+            cadastra.Local = txtLocalC.Text.Trim();
+            lista.Add(cadastra);
+            SalvaLista();
+            
+        }
+
         public void LerTexto()
         {
             using (StreamReader sr = new StreamReader("estoque.txt"))
             {
                 string linha = string.Empty;
                 int contador = 0;
-                
+
                 while ((linha = sr.ReadLine()) != null)
                 {
                     string[] split = new string[4];
@@ -47,12 +118,13 @@ namespace ExemploDataGrid
             AtualizaGrid();
         }
 
-        public void AtualizaGrid() 
+        public void AtualizaGrid()
         {
-            
             int pos = 0;
-
+          
             gridLista = dgvLista;// Atribui o elemento da tela
+            gridLista.Columns.Clear();
+            gridLista.Rows.Clear();
             gridLista.Columns.Add("Item", "Item");
             gridLista.Columns.Add("Disponivel", "Disponivel");
             gridLista.Columns.Add("Manutenção/Descarregado", "Manutenção/Descarregado");
@@ -67,42 +139,41 @@ namespace ExemploDataGrid
                 gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
                 gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                 gridLista.Rows[pos].Cells[3].Value = a.Local;
-
                 pos++;
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void ExcluiItem(Item a)
         {
-           
-           
-        }
-
-        private void dgvLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnBusca_Click(object sender, EventArgs e)
-        {
-            foreach (Item a in lista)
+            bool ExisteItem = false;
+            foreach (Item b in lista)
             {
-                if (a.Nome == txtBusca.Text.ToString().Trim())
+                if (a.Nome.ToUpper() == b.Nome.ToUpper())
                 {
-                    gridLista.Rows.Clear();
-                    gridLista.Rows[0].Cells[0].Value = a.Nome;
-                    gridLista.Rows[0].Cells[1].Value = a.Disponivel;
-                    gridLista.Rows[0].Cells[2].Value = a.Manutencao;
-                    gridLista.Rows[0].Cells[3].Value = a.Local;
+                    lista.Remove(b);
+                    ExisteItem = true;
                     break;
                 }
-                else
-                { }
-                
             }
-           
-            
+            if (!ExisteItem)
+            {
+                MessageBox.Show("item Não Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                AtualizaGrid();
+            }
+            else
+            {
+                SalvaLista();
+            }
         }
-               
+        public void SalvaLista()
+        {           
+            List<string> ListaTexo = new List<string>();
+            foreach (Item b in lista)
+            {
+                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local);
+            }
+            System.IO.File.WriteAllLines(@"estoque.txt", ListaTexo);
+            AtualizaGrid();
+        }
     }
 }
