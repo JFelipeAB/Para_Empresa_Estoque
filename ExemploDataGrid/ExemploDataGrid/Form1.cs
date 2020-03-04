@@ -68,7 +68,15 @@ namespace ExemploDataGrid
             insere.Disponivel = Nud1.Text.Trim();
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
-            lista.Add(insere);
+            Item alterado = ExcluiItem(insere);
+            if (alterado.Local == "")
+            {
+                lista.Add(alterado);
+            }
+            else
+            {
+                lista.Add(insere);
+            }
             SalvaLista();
         }
 
@@ -80,7 +88,7 @@ namespace ExemploDataGrid
             excluir.Disponivel = Nud1.Text.Trim();
             excluir.Manutencao = Nud2.Text.Trim();
             excluir.Local = txtLocalA.Text.Trim();
-            ExcluiItem(excluir);
+            Item reserva = ExcluiItem(excluir);
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -143,8 +151,9 @@ namespace ExemploDataGrid
             }
         }
 
-        public void ExcluiItem(Item a)
+        public Item ExcluiItem(Item a)
         {
+            Item Removido = a;
             bool ExisteItem = false;
             foreach (Item b in lista)
             {
@@ -152,6 +161,7 @@ namespace ExemploDataGrid
                 {
                     lista.Remove(b);
                     ExisteItem = true;
+                    Removido = b;
                     break;
                 }
             }
@@ -164,6 +174,7 @@ namespace ExemploDataGrid
             {
                 SalvaLista();
             }
+            return Removido;
         }
         public void SalvaLista()
         {           

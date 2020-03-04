@@ -1,5 +1,5 @@
-Mouse|10|2|Armario prateleira 1
 Cabo Fonte|10|3|Armario prateleira 2
-Monitor|0|2|Armario prateleira 4
 Cd|10|0|Bancada
-Tinta Magenta 1L|1|0|Armario Primeira Prateleira
+Tinta Magenta 1L|2|0|Armario Primeira Prateleira
+Monitor|3|2|Armario prateleira 2
+Cabo VGI|3|1|
