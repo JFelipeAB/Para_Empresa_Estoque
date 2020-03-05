@@ -53,6 +53,7 @@ namespace ExemploDataGrid
                 MessageBox.Show("Nenhum item Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 AtualizaGrid();
             }
+            txtBusca.Clear();
         }
        
 
@@ -69,12 +70,16 @@ namespace ExemploDataGrid
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
             Item alterado = ExcluiItem(insere);
-            if ( alterado.Local == "")
+            if ( String.IsNullOrEmpty(insere.Local))
             {
                 insere.Local = alterado.Local;                
             }
             lista.Add(insere);
             SalvaLista();
+            txtNomeA.Clear();
+            txtLocalA.Clear();
+            Nud1.Text = "0";
+            Nud2.Text = "0";
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -86,6 +91,10 @@ namespace ExemploDataGrid
             excluir.Manutencao = Nud2.Text.Trim();
             excluir.Local = txtLocalA.Text.Trim();
             Item reserva = ExcluiItem(excluir);
+            txtNomeA.Clear();
+            txtLocalA.Clear();
+            Nud1.Text = "0";
+            Nud2.Text = "0";
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -96,7 +105,10 @@ namespace ExemploDataGrid
             cadastra.Local = txtLocalC.Text.Trim();
             lista.Add(cadastra);
             SalvaLista();
-            
+            txtNomeC.Clear();
+            txtLocalC.Clear();
+            Nud3.Text = "0";
+            Nud4.Text = "0";
         }
 
         public void LerTexto()
