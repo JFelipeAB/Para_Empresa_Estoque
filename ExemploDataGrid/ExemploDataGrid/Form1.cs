@@ -84,17 +84,20 @@ namespace ExemploDataGrid
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Certeza que deseja exclui o Item?", "`Confirmação", MessageBoxButtons.YesNo);
-            Item excluir = new Item();
-            excluir.Nome = txtNomeA.Text.Trim();
-            excluir.Disponivel = Nud1.Text.Trim();
-            excluir.Manutencao = Nud2.Text.Trim();
-            excluir.Local = txtLocalA.Text.Trim();
-            Item reserva = ExcluiItem(excluir);
-            txtNomeA.Clear();
-            txtLocalA.Clear();
-            Nud1.Text = "0";
-            Nud2.Text = "0";
+            if(MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                
+                Item excluir = new Item();
+                excluir.Nome = txtNomeA.Text.Trim();
+                excluir.Disponivel = Nud1.Text.Trim();
+                excluir.Manutencao = Nud2.Text.Trim();
+                excluir.Local = txtLocalA.Text.Trim();
+                Item reserva = ExcluiItem(excluir);
+                txtNomeA.Clear();
+                txtLocalA.Clear();
+                Nud1.Text = "0";
+                Nud2.Text = "0";
+            }
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
