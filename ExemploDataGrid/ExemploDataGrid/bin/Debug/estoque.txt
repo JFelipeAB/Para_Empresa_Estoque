@@ -1,6 +1,6 @@
 Tinta Magenta 1L|2|0|Armario Primeira Prateleira
-Monitor|3|2|Armario prateleira 2
-Cd|12|0|Caixa Bancada
 Cabo Fonte|11|0|Armario prateleira 2
 Tinta CIano 1L|1|0|Armario Prateleira 1
 Cabo VGI|7|1|Amario
+Cd|11|0|Caixa Bancada
+Monitor|3|2|Armario prateleira 2

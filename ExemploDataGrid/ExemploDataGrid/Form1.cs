@@ -33,6 +33,7 @@ namespace ExemploDataGrid
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             gridLista.Rows.Clear();
+            CbAlterar.Items.Clear();
             int pos = 0;
             bool ExisteItem = false;
             foreach (Item a in lista)
@@ -45,6 +46,7 @@ namespace ExemploDataGrid
                     gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                     gridLista.Rows[pos].Cells[3].Value = a.Local;
                     pos++;
+                    CbAlterar.Items.Add(a.Nome);
                     ExisteItem = true;
                 }
             }
@@ -65,7 +67,7 @@ namespace ExemploDataGrid
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
             Item insere = new Item();
-            insere.Nome = txtNomeA.Text.Trim();
+            insere.Nome = CbAlterar.Text.Trim();
             insere.Disponivel = Nud1.Text.Trim();
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
@@ -76,7 +78,7 @@ namespace ExemploDataGrid
             }
             lista.Add(insere);
             SalvaLista();
-            txtNomeA.Clear();
+            CbAlterar.Items.Clear();
             txtLocalA.Clear();
             Nud1.Text = "0";
             Nud2.Text = "0";
@@ -88,12 +90,12 @@ namespace ExemploDataGrid
             {
                 
                 Item excluir = new Item();
-                excluir.Nome = txtNomeA.Text.Trim();
+                excluir.Nome = CbAlterar.Text.Trim();
                 excluir.Disponivel = Nud1.Text.Trim();
                 excluir.Manutencao = Nud2.Text.Trim();
                 excluir.Local = txtLocalA.Text.Trim();
                 Item reserva = ExcluiItem(excluir);
-                txtNomeA.Clear();
+                CbAlterar.Items.Clear();
                 txtLocalA.Clear();
                 Nud1.Text = "0";
                 Nud2.Text = "0";
