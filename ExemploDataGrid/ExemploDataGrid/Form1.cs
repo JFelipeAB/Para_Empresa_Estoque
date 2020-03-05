@@ -69,14 +69,11 @@ namespace ExemploDataGrid
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
             Item alterado = ExcluiItem(insere);
-            if (alterado.Local == "")
+            if ( alterado.Local == "")
             {
-                lista.Add(alterado);
+                insere.Local = alterado.Local;                
             }
-            else
-            {
-                lista.Add(insere);
-            }
+            lista.Add(insere);
             SalvaLista();
         }
 
