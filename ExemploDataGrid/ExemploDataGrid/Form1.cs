@@ -22,13 +22,7 @@ namespace ExemploDataGrid
             InitializeComponent();
             LerTexto();
         }
-
         
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-           
-        }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -149,11 +143,14 @@ namespace ExemploDataGrid
             gridLista.Rows.Clear();
             gridLista.Columns.Add("Item", "Item");
             gridLista.Columns.Add("Disponivel", "Disponivel");
-            gridLista.Columns.Add("Manutenção/Descarregado", "Manutenção/Descarregado");
+            gridLista.Columns.Add("Manutenção", "Manutenção");
             gridLista.Columns.Add("Local", "Local");
 
             gridLista.Columns[3].Width = 200;
-
+            gridLista.Columns[0].Width = 180;
+            gridLista.Columns[1].Width = 70;
+            gridLista.Columns[2].Width = 70;
+            
             foreach (Item a in lista)
             {
                 gridLista.Rows.Add();
