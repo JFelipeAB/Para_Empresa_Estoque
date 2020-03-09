@@ -1,10 +1,10 @@
-Tinta Magenta 1L|2|0|Armario Primeira Prateleira
-Cabo Fonte|11|0|Armario prateleira 2
-Tinta CIano 1L|1|0|Armario Prateleira 1
-Cabo VGI|7|1|Amario
-Cd|11|0|Caixa Bancada
-Monitor|3|2|Armario prateleira 2
-Cartucho HP 933xl Black|0|3|Caixa menor de cartuchos
-Cartucho HP 933xl Ciano|0|4|Caixa menor de cartuchos
-Cartucho HP 933xl Yellow|0|3|Caixa menor de cartuchos
-Cartucho HP 933xl Magenta|0|3|Caixa menor de cartuchos
+Tinta Magenta 1L|2|0|Armario Primeira Prateleira|
+Cabo Fonte|11|0|Armario prateleira 2|
+Tinta CIano 1L|1|0|Armario Prateleira 1|
+Cabo VGI|7|1|Amario|
+Monitor|3|2|Armario prateleira 2|
+Cartucho HP 933xl Yellow|0|3|Caixa menor de cartuchos|
+Cartucho HP 933xl Magenta|0|3|Caixa menor de cartuchos|
+Cartucho HP 933xl Ciano|3|2|Caixa menor de cartuchos|
+Cartucho HP 933xl Black|1|3|Caixa menor de cartuchos|
+cd|10|0|Caixa Bancada|Diretoria

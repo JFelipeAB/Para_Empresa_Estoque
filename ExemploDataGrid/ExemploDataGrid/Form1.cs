@@ -15,6 +15,7 @@ namespace ExemploDataGrid
     public partial class Form1 : Form
     {
         public DataGridView gridLista;
+
         public List<Item> lista = new List<Item>();
 
         public Form1()
@@ -22,7 +23,6 @@ namespace ExemploDataGrid
             InitializeComponent();
             LerTexto();
         }
-        
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -32,13 +32,14 @@ namespace ExemploDataGrid
             bool ExisteItem = false;
             foreach (Item a in lista)
             {
-                if (a.Nome.ToUpper().IndexOf(txtBusca.Text.ToString().Trim().ToUpper()) != -1)
+                if (a.Nome.ToUpper().IndexOf(txtBusca.Text.ToString().Trim().ToUpper()) != -1) //busca qualuqer parte do Nome
                 {
                     gridLista.Rows.Add();
                     gridLista.Rows[pos].Cells[0].Value = a.Nome;
                     gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
                     gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                     gridLista.Rows[pos].Cells[3].Value = a.Local;
+                    gridLista.Rows[pos].Cells[4].Value = a.Fornecedor;
                     pos++;
                     CbAlterar.Items.Add(a.Nome);
                     ExisteItem = true;
@@ -51,7 +52,6 @@ namespace ExemploDataGrid
             }
             txtBusca.Clear();
         }
-       
 
         private void BtnAtualizar_Click(object sender, EventArgs e)
         {
@@ -65,49 +65,48 @@ namespace ExemploDataGrid
             insere.Disponivel = Nud1.Text.Trim();
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
-            Item alterado = ExcluiItem(insere);
-            if ( String.IsNullOrEmpty(insere.Local))
+            insere.Fornecedor = txtFornecedor.Text.Trim();
+            Item alterado = ExcluiItem(insere); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
+
+            if (alterado == null) //Se o item a ser excluido não for encontrado, ele retorna nulo
             {
-                insere.Local = alterado.Local;                
+                return;
+            }
+            if (String.IsNullOrEmpty(insere.Local)) //Se o usuario deixar o campo Local em branco, o programa matem o antigo local
+            {
+                insere.Local = alterado.Local;
             }
             lista.Add(insere);
             SalvaLista();
-            CbAlterar.Items.Clear();
-            txtLocalA.Clear();
-            Nud1.Text = "0";
-            Nud2.Text = "0";
+            LimpaCampos();
+            MessageBox.Show("Alterado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BtnExclui_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                
+
                 Item excluir = new Item();
-                excluir.Nome = CbAlterar.Text.Trim();
-                excluir.Disponivel = Nud1.Text.Trim();
-                excluir.Manutencao = Nud2.Text.Trim();
-                excluir.Local = txtLocalA.Text.Trim();
-                Item reserva = ExcluiItem(excluir);
-                CbAlterar.Items.Clear();
-                txtLocalA.Clear();
-                Nud1.Text = "0";
-                Nud2.Text = "0";
+                excluir.Nome = CbAlterar.Text.Trim();                
+                excluir = ExcluiItem(excluir); // O metodo tem retorno para outras funções
+                LimpaCampos();
+                MessageBox.Show("Excluido com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Item cadastra = new Item();
-            cadastra.Nome = txtNomeC.Text.Trim();   
-            cadastra.Disponivel = Nud3.Text.Trim();
-            cadastra.Manutencao = Nud4.Text.Trim();
-            cadastra.Local = txtLocalC.Text.Trim();
+            cadastra.Nome = CbAlterar.Text.Trim();
+            cadastra.Disponivel = Nud1.Text.Trim();
+            cadastra.Manutencao = Nud2.Text.Trim();
+            cadastra.Local = txtLocalA.Text.Trim();
+            cadastra.Fornecedor = txtFornecedor.Text.Trim();
             lista.Add(cadastra);
             SalvaLista();
-            txtNomeC.Clear();
-            txtLocalC.Clear();
-            Nud3.Text = "0";
-            Nud4.Text = "0";
+            LimpaCampos();
+            MessageBox.Show("Cadastrado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void LerTexto()
@@ -119,13 +118,14 @@ namespace ExemploDataGrid
 
                 while ((linha = sr.ReadLine()) != null)
                 {
-                    string[] split = new string[4];
+                    string[] split = new string[5];
                     Item a = new Item();
                     split = linha.Split('|');
                     a.Nome = split[0];
                     a.Disponivel = split[1];
                     a.Manutencao = split[2];
                     a.Local = split[3];
+                    a.Fornecedor = split[4];
 
                     lista.Add(a);
                     contador++;
@@ -137,20 +137,21 @@ namespace ExemploDataGrid
         public void AtualizaGrid()
         {
             int pos = 0;
-          
+
             gridLista = dgvLista;// Atribui o elemento da tela
             gridLista.Columns.Clear();
             gridLista.Rows.Clear();
-            gridLista.Columns.Add("Item", "Item");
+            gridLista.Columns.Add("Item", "Item"); //nome das colunas
             gridLista.Columns.Add("Disponivel", "Disponivel");
             gridLista.Columns.Add("Manutenção", "Manutenção");
             gridLista.Columns.Add("Local", "Local");
-
-            gridLista.Columns[3].Width = 200;
-            gridLista.Columns[0].Width = 180;
-            gridLista.Columns[1].Width = 70;
+            gridLista.Columns.Add("Fornecedor","Fornecedor");
+                       
+            gridLista.Columns[0].Width = 160; //tamanho das colunas
+            gridLista.Columns[1].Width = 60;
             gridLista.Columns[2].Width = 70;
-            
+            gridLista.Columns[3].Width = 170;
+
             foreach (Item a in lista)
             {
                 gridLista.Rows.Add();
@@ -158,6 +159,7 @@ namespace ExemploDataGrid
                 gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
                 gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                 gridLista.Rows[pos].Cells[3].Value = a.Local;
+                gridLista.Rows[pos].Cells[4].Value = a.Fornecedor;
                 pos++;
             }
         }
@@ -180,6 +182,7 @@ namespace ExemploDataGrid
             {
                 MessageBox.Show("item Não Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 AtualizaGrid();
+                return null;
             }
             else
             {
@@ -187,15 +190,26 @@ namespace ExemploDataGrid
             }
             return Removido;
         }
+
         public void SalvaLista()
-        {           
+        {
             List<string> ListaTexo = new List<string>();
             foreach (Item b in lista)
             {
-                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local);
+                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local + '|' + b.Fornecedor);
             }
             System.IO.File.WriteAllLines(@"estoque.txt", ListaTexo);
             AtualizaGrid();
+        }
+
+        public void LimpaCampos()
+        {
+            txtBusca.Clear();
+            txtLocalA.Clear();
+            txtFornecedor.Clear();
+            Nud1.Text = "0";
+            Nud2.Text = "0";
+            CbAlterar.Items.Clear();
         }
     }
 }
