@@ -35,3 +35,24 @@ C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\Exem
 C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.CoreCompileInputs.cache
 C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
 C:\Users\Fátima.Fatima-PC\Desktop\Git\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe.config
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.pdb
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Form1.resources
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
+C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe.config
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.exe
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\bin\Debug\ExemploDataGrid.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojAssemblyReference.cache
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Form1.resources
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Properties.Resources.resources
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csproj.GenerateResource.cache
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojAssemblyReference.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb

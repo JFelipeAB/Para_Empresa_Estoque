@@ -1,10 +1,18 @@
-Tinta Magenta 1L|2|0|Armario Primeira Prateleira|
-Cabo Fonte|11|0|Armario prateleira 2|
 Tinta CIano 1L|1|0|Armario Prateleira 1|
-Cabo VGI|7|1|Amario|
-Monitor|3|2|Armario prateleira 2|
-Cartucho HP 933xl Yellow|0|3|Caixa menor de cartuchos|
-Cartucho HP 933xl Magenta|0|3|Caixa menor de cartuchos|
-Cartucho HP 933xl Ciano|3|2|Caixa menor de cartuchos|
-Cartucho HP 933xl Black|1|3|Caixa menor de cartuchos|
-cd|10|0|Caixa Bancada|Diretoria
+Tinta Magenta 1L|1|0|Armario Primeira Prateleira|
+Tinta Yellow 1L|1|0|Armario 1 Prateleira 1|Mizink
+Cabo Fonte|10|0|Armario 1 prateleira 2|
+Monitor Tela quadrada|0|4|G2|
+Mouse s\ fio|0|5|Armario principal prateleira 3|sem conector
+Mouse c\ fio|7|0|Armario principal prateleira 3|
+Leitor de CD|0|1|Armario diretoria|Osamu 03/2020, não abre
+Monitor|3|0|Sobre armario da diretoria|
+Cartucho HP 664xl col|3|0|Estoque|
+Cartucho HP 954xl Magenta|5|0|Estoque|
+Cartucho HP 954xl CIano|5|0|Estoque|
+Cartucho HP 904xl Yellow|7|0|Estoque|
+Cartucho HP 904xl Ciano|6|0|Estoque|
+Cartucho HP 904xl Magenta|3|0|Estoque|
+Cartucho HP 904xl Black|6|0|Estoque|
+Unidade de Imagem|1|0|Estoque|
+Toner Samsung|3|9|Estoque|

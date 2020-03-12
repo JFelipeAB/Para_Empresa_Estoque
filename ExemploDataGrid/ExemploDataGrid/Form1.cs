@@ -55,7 +55,8 @@ namespace ExemploDataGrid
 
         private void BtnAtualizar_Click(object sender, EventArgs e)
         {
-            AtualizaGrid();
+            LerTexto();
+            LimpaCampos();
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
@@ -72,10 +73,14 @@ namespace ExemploDataGrid
             {
                 return;
             }
-            if (String.IsNullOrEmpty(insere.Local)) //Se o usuario deixar o campo Local em branco, o programa matem o antigo local
-            {
-                insere.Local = alterado.Local;
-            }
+            //if (String.IsNullOrEmpty(insere.Local)) //Se o usuario deixar o campo Local em branco, o programa matem o antigo local
+            //{
+            //    insere.Local = alterado.Local;
+            //}
+            //if (String.IsNullOrEmpty(insere.Fornecedor)) //Se o usuario deixar o campo fornecedor em branco, o programa matem o antigo local
+            //{
+            //    insere.Fornecedor = alterado.Fornecedor;
+            //}
             lista.Add(insere);
             SalvaLista();
             LimpaCampos();
@@ -90,8 +95,12 @@ namespace ExemploDataGrid
                 Item excluir = new Item();
                 excluir.Nome = CbAlterar.Text.Trim();                
                 excluir = ExcluiItem(excluir); // O metodo tem retorno para outras funções
-                LimpaCampos();
-                MessageBox.Show("Excluido com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(excluir != null)
+                    {
+                    LimpaCampos();
+                    MessageBox.Show("Excluido com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
             }
         }
 
@@ -111,6 +120,7 @@ namespace ExemploDataGrid
 
         public void LerTexto()
         {
+            lista.Clear();
             using (StreamReader sr = new StreamReader("estoque.txt"))
             {
                 string linha = string.Empty;
@@ -137,15 +147,15 @@ namespace ExemploDataGrid
         public void AtualizaGrid()
         {
             int pos = 0;
-
+            
             gridLista = dgvLista;// Atribui o elemento da tela
-            gridLista.Columns.Clear();
             gridLista.Rows.Clear();
+            gridLista.Columns.Clear();            
             gridLista.Columns.Add("Item", "Item"); //nome das colunas
             gridLista.Columns.Add("Disponivel", "Disponivel");
             gridLista.Columns.Add("Manutenção", "Manutenção");
             gridLista.Columns.Add("Local", "Local");
-            gridLista.Columns.Add("Fornecedor","Fornecedor");
+            gridLista.Columns.Add("Observação","Observação");
                        
             gridLista.Columns[0].Width = 160; //tamanho das colunas
             gridLista.Columns[1].Width = 60;
@@ -204,12 +214,23 @@ namespace ExemploDataGrid
 
         public void LimpaCampos()
         {
+            CbAlterar.Text= "";
             txtBusca.Clear();
             txtLocalA.Clear();
             txtFornecedor.Clear();
             Nud1.Text = "0";
             Nud2.Text = "0";
             CbAlterar.Items.Clear();
+        }
+
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvLista.CurrentRow.Selected = true;
+            CbAlterar.Text = dgvLista.CurrentRow.Cells[0].Value.ToString();            
+            Nud1.Text = dgvLista.CurrentRow.Cells[1].Value.ToString();
+            Nud2.Text = dgvLista.CurrentRow.Cells[2].Value.ToString();
+            txtLocalA.Text = dgvLista.CurrentRow.Cells[3].Value.ToString();
+            txtFornecedor.Text = dgvLista.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

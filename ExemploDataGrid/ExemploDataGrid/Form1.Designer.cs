@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,16 +50,11 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.BtnAtualizar = new System.Windows.Forms.Button();
-            this.especificacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistema_integradoDataSet = new ExemploDataGrid.sistema_integradoDataSet();
-            this.especificacaoTableAdapter = new ExemploDataGrid.sistema_integradoDataSetTableAdapters.especificacaoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.especificacaoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistema_integradoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLista
@@ -69,21 +63,24 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(12, 57);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(582, 344);
+            this.dgvLista.Size = new System.Drawing.Size(611, 344);
             this.dgvLista.TabIndex = 0;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tempus Sans ITC", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(312, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 27);
+            this.label1.Size = new System.Drawing.Size(227, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Estoque Informatica";
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtFornecedor);
             this.groupBox1.Controls.Add(this.btnCadastrar);
@@ -97,9 +94,10 @@
             this.groupBox1.Controls.Add(this.BtnAlterar);
             this.groupBox1.Controls.Add(this.txtLocalA);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox1.Location = new System.Drawing.Point(12, 407);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(756, 154);
+            this.groupBox1.Size = new System.Drawing.Size(806, 154);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alterar Cadastrar e  Excluir";
@@ -110,16 +108,16 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(578, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.Size = new System.Drawing.Size(72, 15);
             this.label6.TabIndex = 21;
-            this.label6.Text = "Fornecedor";
+            this.label6.Text = "Observação";
             // 
             // txtFornecedor
             // 
             this.txtFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFornecedor.Location = new System.Drawing.Point(581, 63);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(158, 22);
+            this.txtFornecedor.Size = new System.Drawing.Size(207, 22);
             this.txtFornecedor.TabIndex = 20;
             // 
             // btnCadastrar
@@ -219,6 +217,7 @@
             // BtnExclui
             // 
             this.BtnExclui.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExclui.ForeColor = System.Drawing.Color.Maroon;
             this.BtnExclui.Location = new System.Drawing.Point(113, 506);
             this.BtnExclui.Name = "BtnExclui";
             this.BtnExclui.Size = new System.Drawing.Size(165, 47);
@@ -229,11 +228,13 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.BtnBuscar);
             this.groupBox4.Controls.Add(this.txtBusca);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(600, 175);
+            this.groupBox4.ForeColor = System.Drawing.Color.Maroon;
+            this.groupBox4.Location = new System.Drawing.Point(629, 175);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(189, 186);
             this.groupBox4.TabIndex = 15;
@@ -271,7 +272,8 @@
             // BtnAtualizar
             // 
             this.BtnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAtualizar.Location = new System.Drawing.Point(609, 81);
+            this.BtnAtualizar.ForeColor = System.Drawing.Color.Maroon;
+            this.BtnAtualizar.Location = new System.Drawing.Point(638, 81);
             this.BtnAtualizar.Name = "BtnAtualizar";
             this.BtnAtualizar.Size = new System.Drawing.Size(165, 64);
             this.BtnAtualizar.TabIndex = 4;
@@ -279,26 +281,13 @@
             this.BtnAtualizar.UseVisualStyleBackColor = true;
             this.BtnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
             // 
-            // especificacaoBindingSource
-            // 
-            this.especificacaoBindingSource.DataMember = "especificacao";
-            this.especificacaoBindingSource.DataSource = this.sistema_integradoDataSet;
-            // 
-            // sistema_integradoDataSet
-            // 
-            this.sistema_integradoDataSet.DataSetName = "sistema_integradoDataSet";
-            this.sistema_integradoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // especificacaoTableAdapter
-            // 
-            this.especificacaoTableAdapter.ClearBeforeFill = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(801, 585);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(830, 585);
             this.Controls.Add(this.BtnAtualizar);
             this.Controls.Add(this.BtnExclui);
             this.Controls.Add(this.groupBox4);
@@ -307,7 +296,7 @@
             this.Controls.Add(this.dgvLista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Estoque";
+            this.Text = "Estoque 1.0";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -315,8 +304,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.especificacaoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistema_integradoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,9 +329,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtnAtualizar;
         private System.Windows.Forms.ComboBox CbAlterar;
-        private sistema_integradoDataSet sistema_integradoDataSet;
-        private System.Windows.Forms.BindingSource especificacaoBindingSource;
-        private sistema_integradoDataSetTableAdapters.especificacaoTableAdapter especificacaoTableAdapter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Button btnCadastrar;
