@@ -13,11 +13,12 @@ namespace ExemploDataGrid
         private string manutencao;
         private string local;
         private string fornecedor;
-
+        private string data;
         public string Nome { get; set;}
         public string Fornecedor { get; set;}
         public string Disponivel { get; set;}
         public string Manutencao { get; set; }
         public string Local { get; set; }
+        public string Data { get; set;}
     }
 }

@@ -19,7 +19,7 @@ namespace ExemploDataGrid
         public List<Item> lista = new List<Item>();
 
         public Form1()
-        {
+        {            
             InitializeComponent();
             LerTexto();
         }
@@ -39,7 +39,8 @@ namespace ExemploDataGrid
                     gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
                     gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                     gridLista.Rows[pos].Cells[3].Value = a.Local;
-                    gridLista.Rows[pos].Cells[4].Value = a.Fornecedor;
+                    gridLista.Rows[pos].Cells[4].Value = a.Data;
+                    gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
                     pos++;
                     CbAlterar.Items.Add(a.Nome);
                     ExisteItem = true;
@@ -67,6 +68,7 @@ namespace ExemploDataGrid
             insere.Manutencao = Nud2.Text.Trim();
             insere.Local = txtLocalA.Text.Trim();
             insere.Fornecedor = txtFornecedor.Text.Trim();
+            insere.Data = DateTime.Now.ToShortDateString();
             Item alterado = ExcluiItem(insere); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
 
             if (alterado == null) //Se o item a ser excluido não for encontrado, ele retorna nulo
@@ -112,6 +114,7 @@ namespace ExemploDataGrid
             cadastra.Manutencao = Nud2.Text.Trim();
             cadastra.Local = txtLocalA.Text.Trim();
             cadastra.Fornecedor = txtFornecedor.Text.Trim();
+            cadastra.Data = DateTime.Now.ToShortDateString();
             lista.Add(cadastra);
             SalvaLista();
             LimpaCampos();
@@ -128,14 +131,15 @@ namespace ExemploDataGrid
 
                 while ((linha = sr.ReadLine()) != null)
                 {
-                    string[] split = new string[5];
+                    string[] split = new string[6];
                     Item a = new Item();
                     split = linha.Split('|');
                     a.Nome = split[0];
                     a.Disponivel = split[1];
                     a.Manutencao = split[2];
                     a.Local = split[3];
-                    a.Fornecedor = split[4];
+                    a.Data = split[4];
+                    a.Fornecedor = split[5];
 
                     lista.Add(a);
                     contador++;
@@ -149,18 +153,21 @@ namespace ExemploDataGrid
             int pos = 0;
             
             gridLista = dgvLista;// Atribui o elemento da tela
+            this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);
             gridLista.Rows.Clear();
             gridLista.Columns.Clear();            
             gridLista.Columns.Add("Item", "Item"); //nome das colunas
             gridLista.Columns.Add("Disponivel", "Disponivel");
             gridLista.Columns.Add("Manutenção", "Manutenção");
             gridLista.Columns.Add("Local", "Local");
+            gridLista.Columns.Add("Data", "Data");
             gridLista.Columns.Add("Observação","Observação");
                        
-            gridLista.Columns[0].Width = 160; //tamanho das colunas
-            gridLista.Columns[1].Width = 60;
-            gridLista.Columns[2].Width = 70;
-            gridLista.Columns[3].Width = 170;
+            gridLista.Columns[0].Width = 200; //tamanho das colunas
+            gridLista.Columns[1].Width = 90;
+            gridLista.Columns[2].Width = 90;
+            gridLista.Columns[3].Width = 200;
+            gridLista.Columns[4].Width = 90;
 
             foreach (Item a in lista)
             {
@@ -169,7 +176,8 @@ namespace ExemploDataGrid
                 gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
                 gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                 gridLista.Rows[pos].Cells[3].Value = a.Local;
-                gridLista.Rows[pos].Cells[4].Value = a.Fornecedor;
+                gridLista.Rows[pos].Cells[4].Value = a.Data;
+                gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
                 pos++;
             }
         }
@@ -206,7 +214,7 @@ namespace ExemploDataGrid
             List<string> ListaTexo = new List<string>();
             foreach (Item b in lista)
             {
-                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local + '|' + b.Fornecedor);
+                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local + '|' + b.Data + '|' + b.Fornecedor);
             }
             System.IO.File.WriteAllLines(@"estoque.txt", ListaTexo);
             AtualizaGrid();
@@ -230,7 +238,9 @@ namespace ExemploDataGrid
             Nud1.Text = dgvLista.CurrentRow.Cells[1].Value.ToString();
             Nud2.Text = dgvLista.CurrentRow.Cells[2].Value.ToString();
             txtLocalA.Text = dgvLista.CurrentRow.Cells[3].Value.ToString();
-            txtFornecedor.Text = dgvLista.CurrentRow.Cells[4].Value.ToString();
+            txtFornecedor.Text = dgvLista.CurrentRow.Cells[5].Value.ToString();
         }
+
+        
     }
 }
