@@ -57,36 +57,51 @@ namespace ExemploDataGrid
         private void BtnAtualizar_Click(object sender, EventArgs e)
         {
             LerTexto();
-            LimpaCampos();
+            LimpaCampos();                        
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            Item insere = new Item();
-            insere.Nome = CbAlterar.Text.Trim();
-            insere.Disponivel = Nud1.Text.Trim();
-            insere.Manutencao = Nud2.Text.Trim();
-            insere.Local = txtLocalA.Text.Trim();
-            insere.Fornecedor = txtFornecedor.Text.Trim();
-            insere.Data = DateTime.Now.ToShortDateString();
-            Item alterado = ExcluiItem(insere); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
+            Item itemAlterado = new Item();
+            itemAlterado.Nome = CbAlterar.Text.Trim();
+            itemAlterado.Disponivel = Nud1.Text.Trim();
+            itemAlterado.Manutencao = Nud2.Text.Trim();
+            itemAlterado.Local = txtLocalA.Text.Trim();
+            itemAlterado.Fornecedor = txtFornecedor.Text.Trim();
+            itemAlterado.Data = DateTime.Now.ToShortDateString();
+            Item itemAnterior = ExcluiItem(itemAlterado); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
 
-            if (alterado == null) //Se o item a ser excluido não for encontrado, ele retorna nulo
+            if (itemAnterior == null) //Se o item a ser excluido não for encontrado, ele retorna nulo
             {
                 return;
             }
-            //if (String.IsNullOrEmpty(insere.Local)) //Se o usuario deixar o campo Local em branco, o programa matem o antigo local
-            //{
-            //    insere.Local = alterado.Local;
-            //}
-            //if (String.IsNullOrEmpty(insere.Fornecedor)) //Se o usuario deixar o campo fornecedor em branco, o programa matem o antigo local
-            //{
-            //    insere.Fornecedor = alterado.Fornecedor;
-            //}
-            lista.Add(insere);
+            
+            lista.Add(itemAlterado);
             SalvaLista();
+            int qtdAntes = Convert.ToInt32(itemAnterior.Disponivel);
+            int qtdDepois = Convert.ToInt32(itemAlterado.Disponivel);
+            int qtdMaAntes = Convert.ToInt32(itemAnterior.Manutencao);
+            int qtdMaDepois = Convert.ToInt32(itemAlterado.Manutencao);
+            if (qtdDepois< qtdAntes)
+            {
+                itemAlterado.Disponivel = (qtdAntes-qtdDepois).ToString();
+                itemAlterado.Manutencao = "0";
+                ConfirmaDestino(itemAlterado);
+            }
+            if (qtdMaDepois < qtdMaAntes)
+            {
+                itemAlterado.Manutencao = (qtdMaAntes - qtdMaDepois).ToString();
+                itemAlterado.Disponivel = "0";
+                ConfirmaDestino(itemAlterado);
+            }
+            else
+            {
+                MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            itemAlterado.Disponivel = qtdDepois.ToString();
+            itemAlterado.Manutencao = qtdMaDepois.ToString();              
             LimpaCampos();
-            MessageBox.Show("Alterado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void BtnExclui_Click(object sender, EventArgs e)
@@ -100,7 +115,8 @@ namespace ExemploDataGrid
                 if(excluir != null)
                     {
                     LimpaCampos();
-                    MessageBox.Show("Excluido com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ConfirmaDestino(excluir);
+                    MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
             }
@@ -240,7 +256,11 @@ namespace ExemploDataGrid
             txtLocalA.Text = dgvLista.CurrentRow.Cells[3].Value.ToString();
             txtFornecedor.Text = dgvLista.CurrentRow.Cells[5].Value.ToString();
         }
-
-        
+                
+        public void ConfirmaDestino(Item i)
+        {
+            Form2 form = new Form2(i);
+            form.ShowDialog();           
+        }
     }
 }

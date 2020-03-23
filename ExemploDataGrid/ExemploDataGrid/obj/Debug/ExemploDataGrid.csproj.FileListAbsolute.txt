@@ -56,3 +56,4 @@ C:\Users\Administrador\Desktop\Dev\Estoque Informatica\Para_Empresa_Estoque\Exem
 \\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.csprojAssemblyReference.cache
 \\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.exe
 \\192.168.0.1\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica\Para_Empresa_Estoque\ExemploDataGrid\ExemploDataGrid\obj\Debug\ExemploDataGrid.Form2.resources

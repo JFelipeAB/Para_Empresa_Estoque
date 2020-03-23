@@ -3,7 +3,6 @@ Cabo Fonte|10|0|Armario 1 prateleira 2|13/03/2020|
 Monitor Tela quadrada|0|4|G2|13/03/2020|
 Mouse s\ fio|0|5|Armario principal prateleira 3|13/03/2020|sem conector
 Mouse c\ fio|7|0|Armario principal prateleira 3|13/03/2020|
-Monitor|3|0|Sobre armario da diretoria|13/03/2020|
 Cartucho HP 664xl col|3|0|Estoque|13/03/2020|
 Cartucho HP 954xl Magenta|5|0|Estoque|13/03/2020|
 Cartucho HP 954xl CIano|5|0|Estoque|13/03/2020|
@@ -14,5 +13,22 @@ Cartucho HP 904xl Black|6|0|Estoque|13/03/2020|
 Unidade de Imagem|1|0|Estoque|13/03/2020|
 Tinta CIano 1L|1|0|Armario Prateleira 1|13/03/2020|
 Tinta Yellow 1L|1|0|Armario 1 Prateleira 1|13/03/2020|Mizink
-Toner Samsung|3|9|Estoque|17/03/2020|
 Leitor de CD|0|1|Armario diretoria|17/03/2020|Osamu, não abre
+Cabo p2-p2, adaptador p5|1|0|mesinha|17/03/2020|cabo com adaptador
+HD externo|4|0|Mesinha|17/03/2020|2 com bkps
+Notebook  Dell Inspiron|1|0|Mesinha|17/03/2020|Geral Reserva
+Notebook Sony Vayo|0|1|Mesinha|17/03/2020|Kyoshi, sem conserto
+Notebook IBM|1|0|Mesinha|17/03/2020|MI-41, verificar
+Notebook  Dell Latitude|2|0|Mesinha|17/03/2020|Thoru, Novo
+Notebook Dell Latitude|1|0|Mesinha|17/03/2020|Kyoshi, Novo
+HD exteno|1|0|Mesinha|17/03/2020|Hiro
+Notebook Dell|1|0|Mesinha|17/03/2020|Eletrica, tela riscada
+Suporte Nobreak|4|0|Mesinha|17/03/2020|
+Relogio de parede|0|1|G2|17/03/2020|Hiro, quebrado
+Toner Samsung|5|2|Estoque|18/03/2020|
+Notebook Dell Inspiron|0|1|Mesinha|20/03/2020|Thoru particular
+Notebook Dell Latitude E6410|1|0|Mesinha|20/03/2020|Hiro particular KIOKO
+Bolsa Guardar Notebook 2|1|0|Mesinha|20/03/2020|diretoria
+Beijamin, adaptador|4|0|Mesinha|20/03/2020|1 o Hiro deu
+Monitor|2|1|Sobre armario da diretoria|23/03/2020|O maior tem problema para ligar
+Ip Camera p2p|1|0|Armario Diretoria|23/03/2020|Hiro
