@@ -16,19 +16,19 @@ Tinta Yellow 1L|1|0|Armario 1 Prateleira 1|13/03/2020|Mizink
 Leitor de CD|0|1|Armario diretoria|17/03/2020|Osamu, não abre
 Cabo p2-p2, adaptador p5|1|0|mesinha|17/03/2020|cabo com adaptador
 HD externo|4|0|Mesinha|17/03/2020|2 com bkps
-Notebook  Dell Inspiron|1|0|Mesinha|17/03/2020|Geral Reserva
 Notebook Sony Vayo|0|1|Mesinha|17/03/2020|Kyoshi, sem conserto
 Notebook IBM|1|0|Mesinha|17/03/2020|MI-41, verificar
-Notebook  Dell Latitude|2|0|Mesinha|17/03/2020|Thoru, Novo
 Notebook Dell Latitude|1|0|Mesinha|17/03/2020|Kyoshi, Novo
 HD exteno|1|0|Mesinha|17/03/2020|Hiro
 Notebook Dell|1|0|Mesinha|17/03/2020|Eletrica, tela riscada
 Suporte Nobreak|4|0|Mesinha|17/03/2020|
 Relogio de parede|0|1|G2|17/03/2020|Hiro, quebrado
 Toner Samsung|5|2|Estoque|18/03/2020|
-Notebook Dell Inspiron|0|1|Mesinha|20/03/2020|Thoru particular
-Notebook Dell Latitude E6410|1|0|Mesinha|20/03/2020|Hiro particular KIOKO
 Bolsa Guardar Notebook 2|1|0|Mesinha|20/03/2020|diretoria
 Beijamin, adaptador|4|0|Mesinha|20/03/2020|1 o Hiro deu
 Monitor|2|1|Sobre armario da diretoria|23/03/2020|O maior tem problema para ligar
 Ip Camera p2p|1|0|Armario Diretoria|23/03/2020|Hiro
+guarda CD|3|0|Armario principal 3 prateleira|06/05/2020|Osamu deu
+Cartão Office 365|1|0|armario diretoria|06/05/2020|Hiro deu, 30 dias de validade
+Notebook  Dell Latitude|1|0|Mesinha|06/05/2020|Thoru, Novo
+Notebook  Dell Inspiron MI77|1|0|Mesinha|06/05/2020|Geral Reserva
